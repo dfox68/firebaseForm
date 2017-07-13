@@ -51,22 +51,7 @@ $(document).ready(function() {
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
       // ...
-    });
-
-
-    // function login() {
-    //   console.log("testing1");
-    //   let provider = new firebase.auth.GoogleAuthProvider();
-    //   provider.addScope('profile');
-    //   provider.addScope('email');
-    //   firebase.auth().signInWithPopup(provider).then(function(result) {
-
-    //     user = result.user;
-    //     let updateStatus = database.ref("users/" + user.uid + "/status");
-    //     updateStatus.set("online");
-    //     updateStatus.onDisconnect().set("offline");
-    //   });
-    // }
+    });    
   }
 });
 });
