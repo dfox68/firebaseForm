@@ -25,8 +25,8 @@ $(document).ready(function() {
 
   $("#btnLoginGoog").on("click", function() {
 
-    alert("test");
-    login();
+    // alert("test");
+    // login();
     function login() {
       console.log("testing1");
       let provider = new firebase.auth.GoogleAuthProvider();
