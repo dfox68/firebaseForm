@@ -27,8 +27,8 @@ $(document).ready(function() {
   $("#btnLoginGoog").on("click", function() {
 
     //alert("test");
-    //login();
-    //function login() {
+    login();
+    function login() {
     firebase.auth().signInWithPopup(provider).then(function(result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = result.credential.accessToken;
@@ -60,6 +60,6 @@ $(document).ready(function() {
     //     updateStatus.onDisconnect().set("offline");
     //   });
     // }
-//  }
+  }
 });
 });
