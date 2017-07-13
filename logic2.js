@@ -33,6 +33,10 @@ $(document).ready(function() {
     firebase.auth().signInWithPopup(provider).then(function(result) {
        provider.addScope('profile');
        provider.addScope('email');
+       user = result.user;
+       var updateStatus = database.ref("users/" + user.uid + "/status");
+       updateStatus.set("online");
+       updateStatus.onDisconnect().set("offline");
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = result.credential.accessToken;
       // The signed-in user info.
