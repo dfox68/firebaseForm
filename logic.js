@@ -12,9 +12,9 @@ var x = 5;
 console.log(x);
 
 function googleSignin() {
-   firebase.auth();
-   console.log("test")
-   .signInWithPopup(provider).then(function(result) {
+
+   //console.log("test");
+   firebase.auth().signInWithPopup(provider).then(function(result) {
       var token = result.credential.accessToken;
       var user = result.user;
 
