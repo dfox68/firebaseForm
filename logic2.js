@@ -18,7 +18,7 @@ $(document).ready(function() {
   // Get Elements
   var emailInput = document.getElementById('emailInput');
   var passwordInput = document.getElementById('passwordInput');
-  var btnLogin = document.getElementById('btnLogin');
+//  var btnLogin = document.getElementById('btnLogin');
   var btnSignUp = document.getElementById('btnSignUp');
   var btnLogout = document.getElementById('btnLogout');
 
@@ -51,7 +51,7 @@ $(document).ready(function() {
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
       // ...
-    });    
+    });
   }
 });
 });
