@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Login Form</title>
-    <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
-  </head>
-  <body>
-    <div>
-  Email:<br>
-  <input type="text" name="email" id="emailInput"><br>
-  Password:<br>
-  <input type="password" name="password" id="LoginGoog"><br><br>
-  <button onclick = "googleSignin()">Google Signin</button>
-<button onclick = "googleSignout()">Google Signout</button>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="logic.js">
-</script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML Login Form</title>
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+</head>
+
+<body>
+  <div>
+    Email:<br>
+    <input type="text" name="email" id="txtEmail"><br> Password:
+    <br>
+    <input type="password" name="password" id="txtPassword"><br><br>
+    <button id="btnRegister" onclick="registerWithEmailPassword()">Register</button>
+    <button id="btnLogin" onclick="LoginEmailPassword()">Login</button>
+    <button onclick="googleSignin()">Google Signin</button>
+    <button id="btnLogout" onclick="googleSignout()" class="btn btn-action hide">Logout</button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="logic.js">
+  </script>
+</body>
+
 </html>
