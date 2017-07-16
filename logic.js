@@ -41,8 +41,8 @@ function registerWithEmailPassword() {
 }
 
 // Real time listener
-firebase.auth().onAuthStateChanged(firebaseUser).catch(function(error) {
-  console.log(error);
+//firebase.auth().onAuthStateChanged(firebaseUser).catch(function(error) {
+//  console.log(error);
 });
 
 function googleSignin() {
