@@ -38,12 +38,12 @@ function registerWithEmailPassword() {
   // Login with email and password
   var promise = auth.createUserWithEmailAndPassword(email, pass);
 //  promise.catch(console.log(error.message));
-}
+//}
 
 // Real time listener
 //firebase.auth().onAuthStateChanged(firebaseUser).catch(function(error) {
 //  console.log(error);
-});
+}
 
 function googleSignin() {
 
