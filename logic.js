@@ -45,9 +45,13 @@ function registerWithEmailPassword() {
   var email = txtEmail.value;
   var pass = txtPassword.value;
   var auth = firebase.auth();
-  // Login with email and password
+  console.log( '---===email===---', email );
+  console.log( '---===pass===---', pass );
+  console.log( '---===auth===---', auth );
+ // Login with email and password
   var promise = auth.createUserWithEmailAndPassword(email, pass);
-  promise.catch(console.log(error.message));
+  console.log( '---===promise===---', promise );
+ // promise.catch(console.log(error.message));
 }
 
 // Real time listener
