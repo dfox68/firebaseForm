@@ -53,8 +53,7 @@ function registerWithEmailPassword() {
 // Real time listener
 firebase.auth().onAuthStateChanged(firebaseUser);
 
-
-
+// Google sigin function
 function googleSignin() {
 
   firebase.auth().signInWithPopup(provider).then(function(result) {
