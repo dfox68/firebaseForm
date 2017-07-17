@@ -26,7 +26,7 @@ function LoginEmailPassword() {
   // Login with email and password
   var promise = auth.signInWithEmailAndPassword(email, password);
   promise.catch(function(error) {
-    console.log(error.message));
+    console.log(error.message);
   });
   function ValidateEmail(mail)
   {
