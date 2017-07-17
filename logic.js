@@ -51,7 +51,7 @@ function registerWithEmailPassword() {
 }
 
 // Real time listener
-firebase.auth().onAuthStateChanged(firebaseUser);
+//firebase.auth().onAuthStateChanged(firebaseUser);
 
 // Google sigin function
 function googleSignin() {
