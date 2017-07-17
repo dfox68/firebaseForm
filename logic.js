@@ -24,8 +24,10 @@ function LoginEmailPassword() {
   var auth = firebase.auth();
 
   // Login with email and password
-  var promise = auth.signInWithEmailAndPassword(email, pass);
-  promise.catch(console.log(error.message));
+  var promise = auth.signInWithEmailAndPassword(email, password);
+  promise.catch(function(error) {
+    console.log(error.message));
+  });
   function ValidateEmail(mail)
   {
    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
