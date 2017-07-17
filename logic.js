@@ -26,7 +26,17 @@ function LoginEmailPassword() {
   // Login with email and password
   var promise = auth.signInWithEmailAndPassword(email, pass);
   promise.catch(console.log(error.message));
+  function ValidateEmail(mail)
+  {
+   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
+    {
+      return (true);
+    }
+      alert("You have entered an invalid email address!");
+      return (false);
+  }
 }
+
 
 //register event
 function registerWithEmailPassword() {
@@ -38,12 +48,12 @@ function registerWithEmailPassword() {
   // Login with email and password
   var promise = auth.createUserWithEmailAndPassword(email, pass);
 //  promise.catch(console.log(error.message));
-//}
+}
 
 // Real time listener
-//firebase.auth().onAuthStateChanged(firebaseUser).catch(function(error) {
-//  console.log(error);
-}
+firebase.auth().onAuthStateChanged(firebaseUser);
+
+
 
 function googleSignin() {
 
