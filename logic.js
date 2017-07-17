@@ -47,7 +47,7 @@ function registerWithEmailPassword() {
   var auth = firebase.auth();
   // Login with email and password
   var promise = auth.createUserWithEmailAndPassword(email, pass);
-//  promise.catch(console.log(error.message));
+  promise.catch(console.log(error.message));
 }
 
 // Real time listener
