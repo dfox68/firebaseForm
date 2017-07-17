@@ -20,8 +20,11 @@ function LoginEmailPassword() {
 
   // Get email and password
   var email = txtEmail.value;
-  var pass = txtPassword.value;
+  var password = txtPassword.value;
   var auth = firebase.auth();
+  console.log( '---===email===---', email );
+  console.log( '---===password===---', password );
+  console.log( '---===auth===---', auth );
 
   // Login with email and password
   var promise = auth.signInWithEmailAndPassword(email, password);
