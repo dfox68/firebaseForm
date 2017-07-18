@@ -1,7 +1,3 @@
-var x = location.protocol;
-console.log(x);
-
-// Initialize Firebase
 var config = {
   apiKey: "AIzaSyC_PB8vCA97DGt-uWAWq5s1L347thWX-Ig",
   authDomain: "fir-auth-4ed23.firebaseapp.com",
@@ -13,45 +9,83 @@ var config = {
 firebase.initializeApp(config);
 var provider = new firebase.auth.GoogleAuthProvider();
 
-$(document).ready(function() {
+// Get Elements
+var txtEmail = document.getElementById('txtEmail');
+var txtPassword = document.getElementById('txtPassword');
+var btnLogin = document.getElementById('btnLogin');
+var btnRegister = document.getElementById('btnRegister');
+var btnLogout = document.getElementById('btnLogout');
 
-  // Get Elements
-  var emailInput = document.getElementById('emailInput');
-  var passwordInput = document.getElementById('passwordInput');
-//  var btnLogin = document.getElementById('btnLogin');
-  var btnSignUp = document.getElementById('btnSignUp');
-  var btnLogout = document.getElementById('btnLogout');
+function LoginEmailPassword() {
 
-  var btnLoginGoog = document.getElementById("btnLoginGoog");
+  // Get email and password
+  var email = txtEmail.value;
+  var password = txtPassword.value;
+  var auth = firebase.auth();
+  console.log( '---===email===---', email );
+  console.log( '---===password===---', password );
+//console.log( '---===auth===---', auth );
 
-  $("#btnLoginGoog").on("click", function() {
-
-    //alert("test");
-    login();
-    function login() {
-
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-       provider.addScope('profile');
-       provider.addScope('email');
-       user = result.user;
-       var updateStatus = database.ref("users/" + user.uid + "/status");
-       updateStatus.set("online");
-       updateStatus.onDisconnect().set("offline");
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      // ...
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
+  // Login with email and password
+  var promise = auth.signInWithEmailAndPassword(email, password);
+  promise.catch(function(error) {
+    console.log(error.message);
+  });
+  function ValidateEmail(mail)
+  {
+   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
+    {
+      return (true);
+    }
+      alert("You have entered an invalid email address!");
+      return (false);
   }
-});
-});
+}
+
+
+//register event
+function registerWithEmailPassword() {
+
+  // Get email and password
+  var email = txtEmail.value;
+  var password = txtPassword.value;
+  var auth = firebase.auth();
+  console.log( '---===email===---', email );
+  console.log( '---===password===---', password );
+  console.log( '---===auth===---', auth );
+ // Login with email and passwordword
+  var promise = auth.createUserWithEmailAndPassword(email, password);
+  console.log( '---===promise===---', promise );
+ // promise.catch(console.log(error.message));
+}
+
+// Real time listener
+//firebase.auth().onAuthStateChanged(firebaseUser);
+
+// Google sigin function
+function googleSignin() {
+
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    var token = result.credential.accessToken;
+    var user = result.user;
+
+    console.log(token);
+    console.log(user);
+  }).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+
+    console.log(error.code);
+    console.log(error.message);
+  });
+}
+
+function googleSignout() {
+  firebase.auth().signOut()
+
+    .then(function() {
+      console.log('Signout Succesfull');
+    }, function(error) {
+      console.log('Signout Failed');
+    });
+}
