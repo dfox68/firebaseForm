@@ -1,4 +1,3 @@
-var provider = new firebase.auth.GoogleAuthProvider();
 var config = {
   apiKey: "AIzaSyC_PB8vCA97DGt-uWAWq5s1L347thWX-Ig",
   authDomain: "fir-auth-4ed23.firebaseapp.com",
@@ -9,7 +8,7 @@ var config = {
 };
 
 firebase.initializeApp(config);
-
+var provider = new firebase.auth.GoogleAuthProvider();
 
 // Get Elements
 var txtEmail = document.getElementById('txtEmail');
