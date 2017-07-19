@@ -6,8 +6,9 @@ var config = {
   storageBucket: "",
   messagingSenderId: "736577492020"
 };
-firebase.initializeApp(config);
 var provider = new firebase.auth.GoogleAuthProvider();
+firebase.initializeApp(config);
+
 
 // Get Elements
 var txtEmail = document.getElementById('txtEmail');
