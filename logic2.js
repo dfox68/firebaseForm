@@ -1,3 +1,4 @@
+var provider = new firebase.auth.GoogleAuthProvider();
 var config = {
   apiKey: "AIzaSyC_PB8vCA97DGt-uWAWq5s1L347thWX-Ig",
   authDomain: "fir-auth-4ed23.firebaseapp.com",
@@ -6,7 +7,7 @@ var config = {
   storageBucket: "",
   messagingSenderId: "736577492020"
 };
-var provider = new firebase.auth.GoogleAuthProvider();
+
 firebase.initializeApp(config);
 
 
