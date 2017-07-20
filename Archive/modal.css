@@ -26,7 +26,7 @@
     /* Position it in the top right corner outside of the modal */
     position: absolute;
     right: 25px;
-    top: 0;
+    top: 0; 
     color: #000;
     font-size: 35px;
     font-weight: bold;
@@ -66,7 +66,7 @@
     box-shadow: 5px 5px 5px #cbcbcb;
     outline: 0;
     letter-spacing: 1px;
-    border-radius: 10px;
+    border-radius: 10px;    
     margin-top: 5px;
     margin-left: 5px;
 
@@ -99,7 +99,7 @@
     height: 60px;
     font-size: 16px;
     border: none;
-    outline: none;
+    outline: none; 
 }
 
 #btnLogin {
@@ -128,7 +128,7 @@
     outline: none;
     letter-spacing: 1px;
     margin-left: 40px;
-    border-radius: 0.2em;
+    border-radius: 0.2em; 
 }
 
 
@@ -183,3 +183,5 @@ body { padding: 2em; }
 .loginBtn--google:focus {
   /*background: white;*/
 }
+
+
