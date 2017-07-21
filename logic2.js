@@ -52,16 +52,18 @@ function registerWithEmailPassword() {
 
   var user = firebase.auth().currentUser;
 
+  function sendEmail();
+
+}
+
+function sendEmail() {
 user.sendEmailVerification().then(function() {
   // Email sent.
 }, function(error) {
   // An error happened.
   console.log(error);
 });
-
 }
-
-
 // Real time listener
 //firebase.auth().onAuthStateChanged(firebaseUser);
 
