@@ -55,6 +55,7 @@ function registerWithEmailPassword() {
 
   user.sendEmailVerification().then(function() {
     // Email sent.
+    console.log(user);
   }, function(error) {
     // An error happened.
   });
