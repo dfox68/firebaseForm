@@ -23,9 +23,9 @@ function LoginEmailPassword() {
   var email = txtEmail.value;
   var password = txtPassword.value;
   var auth = firebase.auth();
-  console.log( '---===email===---', email );
-  console.log( '---===password===---', password );
-//console.log( '---===auth===---', auth );
+  console.log('---===email===---', email);
+  console.log('---===password===---', password);
+  //console.log( '---===auth===---', auth );
 
   // Login with email and password
   var promise = auth.signInWithEmailAndPassword(email, password);
@@ -43,29 +43,26 @@ function registerWithEmailPassword() {
   var email = txtEmail.value;
   var password = txtPassword.value;
   var auth = firebase.auth();
-  console.log( '---===email===---', email );
-  console.log( '---===password===---', password );
-  console.log( '---===auth===---', auth );
- // Login with email and passwordword
+  console.log('---===email===---', email);
+  console.log('---===password===---', password);
+  console.log('---===auth===---', auth);
+  // Login with email and passwordword
   var promise = auth.createUserWithEmailAndPassword(email, password);
-  console.log( '---===promise===---', promise );
+  console.log('---===promise===---', promise);
 
-  var user = firebase.auth().currentUser;
-
-  function sendEmail();
+    function sendEmail() {
+      
+    var user = firebase.auth().currentUser;
+    user.sendEmailVerification().then(function() {
+      // Email sent.
+    }, function(error) {
+      // An error happened.
+      console.log(error);
+    });
+  }
 
 }
 
-function sendEmail() {
-user.sendEmailVerification().then(function() {
-  // Email sent.
-}, function(error) {
-  // An error happened.
-  console.log(error);
-});
-}
-// Real time listener
-//firebase.auth().onAuthStateChanged(firebaseUser);
 
 // Google sigin function
 function googleSignin() {
@@ -93,4 +90,6 @@ function googleSignout() {
     }, function(error) {
       console.log('Signout Failed');
     });
+
+
 }
