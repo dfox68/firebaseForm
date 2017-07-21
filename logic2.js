@@ -50,17 +50,14 @@ function registerWithEmailPassword() {
   var promise = auth.createUserWithEmailAndPassword(email, password);
   console.log('---===promise===---', promise);
 
-    function sendEmail() {
-      
-    var user = firebase.auth().currentUser;
-    user.sendEmailVerification().then(function() {
-      // Email sent.
-    }, function(error) {
-      // An error happened.
-      console.log(error);
-    });
-  }
 
+  var user = firebase.auth().currentUser;
+
+  user.sendEmailVerification().then(function() {
+    // Email sent.
+  }, function(error) {
+    // An error happened.
+  });
 }
 
 
